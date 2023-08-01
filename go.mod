@@ -2,7 +2,10 @@ module github.com/Gileno29/gestor-tarefas
 
 go 1.18
 
-require github.com/spf13/viper v1.16.0
+require (
+	github.com/lib/pq v1.10.9
+	github.com/spf13/viper v1.16.0
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
