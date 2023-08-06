@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -27,8 +28,16 @@ func Create(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		resp = map[string]any{
-			"Error": true,
+			"Error":   true,
+			"Message": fmt.Sprintf("ocorreu um erro ao tentar inserir: %v", err),
+		}
+	} else {
+		resp = map[string]any{
+			"Error":   false,
+			"Message": fmt.Sprintf("Todo inserido com sucesso! ID: %d", id),
 		}
 	}
+	w.Header().Add("Content-type", "application/json")
+	json.NewEncoder(w).Encode(resp)
 
 }
