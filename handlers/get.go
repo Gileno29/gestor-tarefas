@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/Gileno29/gestor-tarefas/models"
+	"github.com/go-chi/chi/v5"
 )
 
 func Get(w http.ResponseWriter, r *http.Request) {
