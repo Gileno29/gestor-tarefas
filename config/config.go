@@ -1,12 +1,14 @@
 package config
 
 import (
+	"fmt"
+
 	"github.com/spf13/viper"
 )
 
-var cfg *config
+var cfg *Config
 
-type config struct {
+type Config struct {
 	API APIConfig
 	DB  DBConfig
 }
@@ -30,18 +32,19 @@ func Init() {
 }
 
 func Load() error {
-	viper.SetConfigName("config")
 	viper.SetConfigType("toml")
-	viper.SetConfigFile(".")
+	viper.SetConfigFile("./config.toml")
 	err := viper.ReadInConfig()
 	if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
 		return err
 	}
 
-	cfg = new(config)
+	cfg = new(Config)
 	cfg.API = APIConfig{
 		Port: viper.GetString("api.port"),
 	}
+
+	fmt.Println("Essa é minha porta: ", viper.GetString("api.port"))
 
 	cfg.DB = DBConfig{
 		Host:     viper.GetString("database.host"),
@@ -60,5 +63,8 @@ func GetDB() DBConfig {
 }
 
 func GetServerPort() string {
+	fmt.Println("Essa é minha cfg: ", cfg)
+
 	return cfg.API.Port
+
 }
