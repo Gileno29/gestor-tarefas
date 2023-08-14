@@ -33,9 +33,11 @@ func Init() {
 
 func Load() error {
 	viper.SetConfigType("toml")
-	viper.SetConfigFile("./config.toml")
+	viper.SetConfigName("config.toml")
+	//viper.SetConfigFile("./config.toml")
 	err := viper.ReadInConfig()
 	if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+		fmt.Printf("entre no if")
 		return err
 	}
 
@@ -44,7 +46,7 @@ func Load() error {
 		Port: viper.GetString("api.port"),
 	}
 
-	fmt.Println("Essa é minha porta: ", viper.GetString("api.port"))
+	fmt.Println("Essa é minha porta: ", viper.GetInt("api.port"))
 
 	cfg.DB = DBConfig{
 		Host:     viper.GetString("database.host"),
@@ -63,7 +65,6 @@ func GetDB() DBConfig {
 }
 
 func GetServerPort() string {
-	fmt.Println("Essa é minha cfg: ", cfg)
 
 	return cfg.API.Port
 
