@@ -22,7 +22,7 @@ func main() {
 	r.Delete("/{id}", handlers.Delete)
 	r.Get("/", handlers.List)
 	r.Get("/{id}", handlers.Get)
-	fmt.Printf("Porta: ", config.GetServerPort())
+	fmt.Print("Porta: ", config.GetServerPort())
 	http.ListenAndServe(fmt.Sprintf(":%s", config.GetServerPort()), r)
 
 }

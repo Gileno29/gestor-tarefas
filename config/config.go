@@ -29,24 +29,32 @@ func Init() {
 	viper.SetDefault("api.port", "9000")
 	viper.SetDefault("database,host", "localhost")
 	viper.SetDefault("database.port", "5332")
+
 }
 
 func Load() error {
-	viper.SetConfigType("toml")
-	viper.SetConfigName("config.toml")
-	//viper.SetConfigFile("./config.toml")
+	viper.SetConfigName("config")
+	viper.SetConfigType("json")
+	viper.AddConfigPath("./")
+	viper.AddConfigPath("/home/gileno/documents/gestor-tarefas/config/")
+
 	err := viper.ReadInConfig()
-	if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
-		fmt.Printf("entre no if")
-		return err
+	if err != nil {
+		fmt.Println(err)
 	}
+
+	/*if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
+		fmt.Println("entre no if")
+		fmt.Println(err)
+		return err
+	}*/
 
 	cfg = new(Config)
 	cfg.API = APIConfig{
 		Port: viper.GetString("api.port"),
 	}
-
-	fmt.Println("Essa é minha porta: ", viper.GetInt("api.port"))
+	fmt.Println("Todas as chaves do viper", viper.AllKeys(), viper.AllSettings())
+	fmt.Println("Essa é minha porta: ", viper.GetString("database"))
 
 	cfg.DB = DBConfig{
 		Host:     viper.GetString("database.host"),
@@ -55,6 +63,7 @@ func Load() error {
 		Pass:     viper.GetString("database.pass"),
 		Database: viper.GetString("database.name"),
 	}
+	fmt.Println("Configurações do dabasee: ", cfg.DB)
 
 	return nil
 
