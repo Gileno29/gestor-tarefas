@@ -125,7 +125,7 @@ Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementada
 
 Liste o time responsável pelo desenvolvimento do projeto
 
-| [<img src="https://avatars.githubusercontent.com/u/38367700?s=48&v=4" width=115><br><sub>Gileno Duarte</sub>](https://github.com/Gileno29/) 
+| [<img src="https://avatars.githubusercontent.com/u/38367700?s=400&u=bcd215bc79bca1543c9723bb3b1cbce93945200a&v=4" width=115><br><sub>Gileno Duarte</sub>](https://github.com/Gileno29/) 
 | :---: | :---: | :---: 
 
 ## Licença 
