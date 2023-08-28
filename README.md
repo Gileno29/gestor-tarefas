@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/>
 </p>
 
-> Status do Projeto: :heavy_check_mark: :warning: (concluido, em desenvolvimento, etc)
+> Status do Projeto: :warning: (Em desenvolvimento)
 
 ### Tópicos 
 
@@ -26,18 +26,18 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 ## Descrição do projeto 
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois. 
+  Projeto para implementação de uma API simples em golang.
 </p>
 
 ## Funcionalidades
 
-:heavy_check_mark: Funcionalidade 1  
+:heavy_check_mark: Listar os produtos  
 
-:heavy_check_mark: Funcionalidade 2  
+:heavy_check_mark: Cadastrar produtos
 
-:heavy_check_mark: Funcionalidade 3  
+:heavy_check_mark: Remover produtos  
 
-:heavy_check_mark: Funcionalidade 4  
+:heavy_check_mark: Filtrar produto especifico  
 
 ## Layout ou Deploy da Aplicação :dash:
 
@@ -49,7 +49,8 @@ Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
 
 ## Pré-requisitos
 
-:warning: [Node](https://nodejs.org/en/download/)
+:warning: [Golang](https://go.dev/doc/install)
+:warning: [Viper](https://github.com/spf13/viper)
 
 ...
 
