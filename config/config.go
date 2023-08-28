@@ -35,19 +35,13 @@ func Init() {
 func Load() error {
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
-	viper.AddConfigPath("./")
-	viper.AddConfigPath("/home/gileno/documents/gestor-tarefas/config/")
+	viper.AddConfigPath("config")
+	//viper.AddConfigPath("/home/gileno/documents/gestor-tarefas/config/")
 
 	err := viper.ReadInConfig()
 	if err != nil {
 		fmt.Println(err)
 	}
-
-	/*if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
-		fmt.Println("entre no if")
-		fmt.Println(err)
-		return err
-	}*/
 
 	cfg = new(Config)
 	cfg.API = APIConfig{
