@@ -40,9 +40,8 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 :heavy_check_mark: Filtrar produto especifico  
 
 ## Layout ou Deploy da Aplicação :dash:
-
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
-
+(em desenvolvimento)
+> Link do deploy da aplicação. Exemplo com netlify:
 ... 
 
 Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
@@ -51,6 +50,7 @@ Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
 
 :warning: [Golang](https://go.dev/doc/install)
 :warning: [Viper](https://github.com/spf13/viper)
+:warning: [Viper](https://github.com/go-chi/chi/v5)
 
 ...
 
@@ -61,12 +61,23 @@ Liste todas as dependencias e libs que o usuário deve ter instalado na máquina
 No terminal, clone o projeto: 
 
 ```
-git clone https://github.com/React-Bootcamp-WoMarkersCode/certificate-generator
+git clone https://github.com/Gileno29/gestor-tarefas.git
+```
+Baixe as dependencias:
+
+```
+go mod tidy
+```
+Rode a aplicação:
+
+```
+go run main.go
 ```
 
 ... 
 
 Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
+
 
 ## Como rodar os testes
 
@@ -82,17 +93,6 @@ Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso d
 
 Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
-## JSON :floppy_disk:
-
-### Usuários: 
-
-|name|email|password|token|avatar|
-| -------- |-------- |-------- |-------- |-------- |
-|Lais Lima|laislima98@hotmail.com|lais123|true|https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-U_HbQAipum9lWln3APcBIwng7T46hdBA42EJv8Hf6Z4fDT3&usqp=CAU|
-
-... 
-
-Se quiser, coloque uma amostra do banco de dados 
 
 ## Iniciando/Configurando banco de dados
 
