@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -11,6 +12,7 @@ import (
 )
 
 func Get(w http.ResponseWriter, r *http.Request) {
+	fmt.Print("Esse é o parametro de minha url: ", r)
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
 		log.Printf("Eror when its try decode json: %v", err)
